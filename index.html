@@ -1,109 +1,237 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misael Alvarado - Portfolio de Edición de Video</title>
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Misael Alvarado Rojas | Editor de Video</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony -->
+    <!-- Application Structure Plan: La aplicación está estructurada como un portfolio de una sola página con una navegación vertical fija. El flujo de usuario se ha diseñado para ser directo y persuasivo: comienza con un gancho (sección Hero), pasa a la prueba visual clave (Showreel), profundiza en el detalle del trabajo (Proyectos), construye confianza (Sobre Mí), detalla las capacidades (Servicios) y finaliza con una llamada de acción (Contacto). Esta arquitectura es ideal para un portfolio ya que permite a los visitantes obtener la información esencial rápidamente, mientras que las secciones secundarias están a solo un clic de distancia. La interactividad de filtrado de proyectos permite una exploración dirigida y eficiente del trabajo del editor. -->
+    <!-- Visualization & Content Choices: 1. Hero -> Goal: Enganchar -> Viz: Título y subtítulo con alto impacto sobre un banner de fondo. -> Interaction: N/A -> Justification: El diseño tipográfico es la principal herramienta visual, reforzada por una imagen de fondo que genera un impacto visual inmediato. 2. Showreel -> Goal: Demostrar habilidad -> Viz: Video embebido de alta calidad -> Interaction: Reproducción del video -> Justification: El video es la forma más directa de mostrar la habilidad de un editor. 3. Proyectos -> Goal: Organizar y contextualizar -> Viz: Galería de tarjetas filtrable -> Interaction: Botones para filtrar por categoría y efecto hover en tarjetas -> Justification: Permite al usuario explorar el trabajo relevante para sus necesidades sin abrumarse con todo el contenido, mientras que el efecto hover mejora la experiencia de usuario. 4. Sobre Mí, Servicios, Contacto -> Goal: Construir confianza -> Viz: Texto y listas con iconos Unicode, foto con efecto hover -> Interaction: N/A -> Justification: Presentan la información de forma clara y legible y el efecto de escala en la foto de perfil genera dinamismo y compromiso. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #332d29;
+        }
+        .nav-link.active {
+            color: #0D9488;
+            font-weight: 700;
+        }
+        .btn-filter.active {
+            background-color: #0D9488;
+            color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <header>
-        <nav>
-            <a href="#inicio" class="logo">Misael Alvarado</a>
-            <ul>
-                <li><a href="#trabajos">Trabajos</a></li>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                
-            </ul>
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-teal-800">Misael Alvarado Rojas</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#proyectos" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-teal-700">Proyectos</a>
+                        <a href="#sobre-mi" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-teal-700">Sobre Mí</a>
+                        <a href="#servicios" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-teal-700">Servicios</a>
+                        <a href="#contacto" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-stone-600 hover:text-teal-700">Contacto</a>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <section id="inicio" class="hero">
-        <div class="contenido-hero">
-            <h1>Misael Alvarado Rojas</h1>
-            <h2>Editor de Video | Creador Audiovisual</h2>
-            <a href="#contacto" class="boton-contacto">Contáctame</a>
+    <div class="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center text-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/4B5563/FFFFFF?text=Fondo+Portfolio+Video');"></div>
+        <div class="absolute inset-0 bg-stone-900 opacity-60"></div>
+        <div class="relative z-10 p-4">
+            <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-4">Misael Alvarado Rojas</h2>
+            <p class="max-w-3xl mx-auto text-lg md:text-xl font-medium text-teal-400">Editor de Video | Creador Audiovisual</p>
+            <p class="max-w-3xl mx-auto text-lg md:text-xl text-stone-200 mt-4">Transformo ideas en narrativas visuales dinámicas que cautivan a las audiencias. Descubre mi trabajo y conecta.</p>
         </div>
+    </div>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+
+        <section id="showreel" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="text-center mb-8">
+                <h3 class="text-3xl font-bold text-stone-800">Mi Showreel</h3>
+                <p class="mt-2 text-lg text-stone-600 max-w-2xl mx-auto">Este reel reúne diferentes trabajos para mostrar mi estilo, mi forma de narrar historias y mi capacidad de adaptar la edición a distintos formatos y audiencias. Es una síntesis de mi trabajo como editor y mi visión creativa.</p>
+            </div>
+            <div class="aspect-w-16 aspect-h-9 w-full rounded-lg overflow-hidden shadow-lg">
+                <iframe class="w-full aspect-video" src="https://player.vimeo.com/video/929497554?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" allow="autoplay; fullscreen; picture-in-picture" title="Mi Reel Profesional"></iframe>
+            </div>
         </section>
 
-    <section id="reel" class="seccion-video">
-        <h2>Mi Reel de Presentación</h2>
-        <p>Este reel reúne diferentes trabajos para mostrar mi estilo, mi forma de narrar historias y mi capacidad de adaptar la edición a distintos formatos y audiencias. Es una síntesis de mi trabajo como editor y mi visión creativa.</p>
-        <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/ejemplo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <section id="trabajos" class="galeria-trabajos">
-        <h2>Mis Trabajos Recientes</h2>
-        <div class="grid-videos">
-            <a href="https://youtu.be/uu1cb2hKckU" target="_blank" class="recuadro-video">
-                <img src="images/URL_DE_LA_IMAGEN_DEL_VIDEO1.jpg" alt="Título del Video 1">
-                <div class="info-video">
-                    <h3>Vlog sobre viajes</h3>
-                    <p>Un proyecto especial donde me encargué de todo el proceso creativo: grabación, storytelling y edición. El reto fue transformar horas de material en una narrativa fluida y atractiva, capaz de transmitir la emoción y energía del viaje.</p>
-                </div>
-            </a>
-    
-            <a href="https://www.youtube.com/watch?v=video2" target="_blank" class="recuadro-video">
-                <img src="images/URL_DE_LA_IMAGEN_DEL_VIDEO2.jpg" alt="Título del Video 2">
-                <div class="info-video">
-                    <h3>Reel comercial para nueva temporada de importante marca de ropa</h3>
-                    <p>Me enfoqué en la edición y recorte de clips para dar vida al lanzamiento de una marca. El desafío estuvo en lograr un video breve, dinámico y con storytelling claro, que conectara rápido con el público de Instagram.</p>
-                </div>
-            </a>
-
-            <a href="https://youtu.be/stc0pBeVFrI" target="_blank" class="recuadro-video">
-                <img src="images/URL_DE_LA_IMAGEN_DEL_VIDEO3.jpg" alt="Título del Video 2">
-                <div class="info-video">
-                    <h3>Reel informativo de deportes electrónicos</h3>
-                    <p>Desde la grabación hasta la edición final, el objetivo fue explicar un tema complejo de forma sencilla y atractiva. El reto fue combinar información clara con un ritmo visual ágil, manteniendo la atención en todo momento.</p>
-                </div>
-            </a>
-    
+        <section id="proyectos" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-stone-800">Proyectos Destacados</h3>
+                <p class="mt-2 text-lg text-stone-600 max-w-2xl mx-auto">Explora mis trabajos más recientes. Cada proyecto es un estudio de caso que detalla mi rol, los desafíos y los resultados finales.</p>
             </div>
-    </section>
+            <div class="flex justify-center flex-wrap gap-2 mb-8">
+                <button class="btn-filter active px-4 py-2 text-sm font-medium rounded-full transition-all duration-200" data-filter="all">Todos</button>
+                <button class="btn-filter px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 bg-white" data-filter="corporativo">Corporativo</button>
+                <button class="btn-filter px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 bg-white" data-filter="social">Social Media</button>
+                <button class="btn-filter px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 bg-white" data-filter="vlog">Vlogs</button>
+            </div>
+            <div id="project-gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="https://youtu.be/uu1cb2hKckU" target="_blank" class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-xl" data-category="vlog">
+                    <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Vlog+de+Viajes" alt="Vlog de Viajes" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg">Vlog sobre viajes</h4>
+                        <p class="text-sm text-stone-500 mb-2">Proyecto personal</p>
+                        <p class="text-sm">Un proyecto especial donde me encargué de todo el proceso creativo: grabación, storytelling y edición. El reto fue transformar horas de material en una narrativa fluida y atractiva, capaz de transmitir la emoción y energía del viaje.</p>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/watch?v=video2" target="_blank" class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-xl" data-category="social">
+                    <img src="https://placehold.co/600x400/115E59/FFFFFF?text=Reel+Comercial" alt="Reel Comercial" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg">Reel comercial para importante marca de ropa</h4>
+                        <p class="text-sm text-stone-500 mb-2">Cliente: Marca de Ropa</p>
+                        <p class="text-sm">Me enfoqué en la edición y recorte de clips para dar vida al lanzamiento de una marca. El desafío estuvo en lograr un video breve, dinámico y con storytelling claro, que conectara rápido con el público de Instagram.</p>
+                    </div>
+                </a>
+                <a href="https://youtu.be/stc0pBeVFrI" target="_blank" class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-xl" data-category="social">
+                    <img src="https://placehold.co/600x400/134E4A/FFFFFF?text=Reel+Informativo" alt="Reel Informativo" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg">Reel informativo de deportes electrónicos</h4>
+                        <p class="text-sm text-stone-500 mb-2">Proyecto informativo</p>
+                        <p class="text-sm">Desde la grabación hasta la edición final, el objetivo fue explicar un tema complejo de forma sencilla y atractiva. El reto fue combinar información clara con un ritmo visual ágil, manteniendo la atención en todo momento.</p>
+                    </div>
+                </a>
+                <a href="#" class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-xl" data-category="corporativo">
+                    <img src="https://placehold.co/600x400/0D9488/FFFFFF?text=Documental" alt="Documental Corporativo" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg">Documental de marca para empresa de tecnología</h4>
+                        <p class="text-sm text-stone-500 mb-2">Cliente: TechSolutions</p>
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </a>
+                <a href="#" class="project-card bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-xl" data-category="social">
+                    <img src="https://placehold.co/600x400/115E59/FFFFFF?text=Contenido+Educativo" alt="Contenido Educativo" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold text-lg">Serie de videos educativos para plataforma online</h4>
+                        <p class="text-sm text-stone-500 mb-2">Cliente: LearnX</p>
+                        <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <section id="sobre-mi" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold text-stone-800">Sobre Mí</h3>
+                    <p class="mt-4 text-lg text-stone-600">Soy Misael Jordan Alvarado Rojas, editor de video apasionado por contar historias a través de la imagen.</p>
+                    <p class="mt-4 text-lg text-stone-600">Me especializo en crear contenido dinámico y atractivo para Instagram, Facebook, TikTok y YouTube, siempre adaptando el estilo a cada plataforma.</p>
+                    <p class="mt-4 text-lg text-stone-600">Disfruto los retos creativos y me gusta experimentar con diferentes formatos para lograr que cada proyecto conecte con la audiencia correcta. Me considero una persona versátil, curiosa y en constante aprendizaje, lo que me permite adaptarme a diferentes estilos y necesidades.</p>
+                    <p class="mt-4 text-lg text-stone-600">Para mí, editar no es solo cortar y unir clips: es dar forma a una idea, potenciarla con ritmo, color y emoción, hasta transformarla en un mensaje que impacte.</p>
+                </div>
+                <div class="bg-stone-200 h-96 w-full rounded-lg overflow-hidden shadow-lg flex items-center justify-center text-center group">
+                    <img src="https://placehold.co/600x600/FDFBF8/0D9488?text=Misael+Alvarado" alt="Retrato de Misael Alvarado Rojas" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105">
+                </div>
+            </div>
+        </section>
 
-    <section id="sobre-mi" class="seccion-sobre-mi">
-        <div class="contenido-sobre-mi">
-            <h2>Sobre mí</h2>
-            <img src="images/URL_DE_LA_IMAGEN_DEL_VIDEO1.jpg" alt="Foto de Misael Alvarado" class="foto-perfil">
-            <p>
-                Soy Misael Jordan Alvarado Rojas, editor de video apasionado por contar historias a través de la imagen.
+        <section id="servicios" class="mb-16 md:mb-24 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-stone-800">Mis Servicios</h3>
+                <p class="mt-2 text-lg text-stone-600 max-w-2xl mx-auto">Ofrezco un amplio rango de servicios de postproducción para ayudarte a alcanzar tus objetivos.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-2">
+                        <span class="text-3xl text-teal-600 mr-3">🎬</span>
+                        <h4 class="text-xl font-bold">Edición de Video</h4>
+                    </div>
+                    <p class="text-stone-600">Montaje de metraje, edición rítmica y narrativa. Desde videos corporativos hasta vlogs y anuncios.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-2">
+                        <span class="text-3xl text-teal-600 mr-3">🎨</span>
+                        <h4 class="text-xl font-bold">Corrección de Color</h4>
+                    </div>
+                    <p class="text-stone-600">Gradación profesional para unificar el look and feel y crear atmósferas visuales impactantes.</p>
+                </div>
+            </div>
+        </section>
 
-Me especializo en crear contenido dinámico y atractivo para Instagram, Facebook, TikTok y YouTube, siempre adaptando el estilo a cada plataforma.
+        <section id="contacto" class="scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-stone-800">Conectemos</h3>
+                <p class="mt-2 text-lg text-stone-600 max-w-2xl mx-auto">¿Listo para empezar un proyecto? Contáctame para discutir tu idea.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <p class="text-lg text-stone-600">Puedes contactarme directamente en:</p>
+                <a href="mailto:hola@misaelalvarado.com" class="mt-4 inline-block bg-teal-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-teal-700 transition-colors">hola@misaelalvarado.com</a>
+                <div class="flex gap-6 mt-6">
+                    <a href="#" class="text-stone-600 hover:text-teal-600 transition-colors">
+                        <span class="text-3xl">💼</span>
+                    </a>
+                    <a href="#" class="text-stone-600 hover:text-teal-600 transition-colors">
+                        <span class="text-3xl">🔗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-Disfruto los retos creativos y me gusta experimentar con diferentes formatos para lograr que cada proyecto conecte con la audiencia correcta. Me considero una persona versátil, curiosa y en constante aprendizaje, lo que me permite adaptarme a diferentes estilos y necesidades.
+    </main>
 
-Para mí, editar no es solo cortar y unir clips: es dar forma a una idea, potenciarla con ritmo, color y emoción, hasta transformarla en un mensaje que impacte.
-            </p>
+    <footer class="bg-stone-800 text-white mt-16 md:mt-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center">
+            <p>&copy; 2025 Misael Alvarado Rojas. Todos los derechos reservados.</p>
         </div>
-    </section>
-
-    <section id="contacto" class="seccion-contacto">
-        <h2>¡Estoy emocionado por trabajar juntos!</h2>
-        <p>¿Tienes un proyecto en mente? ¡Me encantaría ayudarte a darle vida! En este enlace encontrarás un formulario para comunicarte conmigo y comenzar</p>
-    
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSevExa0M7ePAGLhDUMQMKJnRiGRgmLsF2w50vG6zLGokG7M9Q/viewform" target="_blank" class="boton-contacto">
-            Contáctame
-        </a>
-    
-        <div class="redes-sociales">
-            <p>O encuéntrame en mis redes:</p>
-            <a href="https://www.linkedin.com/in/misael-alvarado-882947260/" target="_blank">LinkedIn</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Misael Alvarado. Todos los derechos reservados.</p>
     </footer>
 
-</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.btn-filter');
+            const projectCards = document.querySelectorAll('.project-card');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.classList.add('bg-white');
+                    });
+                    button.classList.add('active');
+                    button.classList.remove('bg-white');
+                    const filter = button.dataset.filter;
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
 
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section[id]');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 80) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
 </html>
