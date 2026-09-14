@@ -228,6 +228,29 @@
     .service-card h3 { margin: 22px 0 8px; }
     .service-card p  { font-size: 17px; color: var(--neutral-800); }
 
+    /* Carousel */
+    .carousel { position: relative; }
+    .carousel-track { display: flex; transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+    .carousel-slide { min-width: 100%; height: 220px; overflow: hidden; filter: saturate(.6) contrast(.85) brightness(1.1) opacity(.94); }
+    .carousel-slide img { width: 100%; height: 100%; object-fit: cover; }
+    .carousel-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      border: none; border-radius: 50%; width: 34px; height: 34px;
+      cursor: pointer; font-size: 18px; z-index: 2; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text); box-shadow: var(--shadow-sm);
+    }
+    .carousel-btn:hover { background: var(--bg); }
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+    .carousel-dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0 0; }
+    .carousel-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--neutral-600); border: none; cursor: pointer; padding: 0; transition: background .2s;
+    }
+    .carousel-dot.active { background: var(--accent); }
+
     /* Contact */
     .contact-box {
       position: relative; overflow: hidden; max-width: 1180px; margin: 0 auto;
@@ -387,6 +410,33 @@
           <p class="project-desc">Exploración 100% motion graphics que transforma ilustraciones planas en un universo dinámico. Transiciones fluidas y animaciones rítmicas que demuestran versatilidad en animación 2D.</p>
         </div>
       </a>
+
+      <div class="project-card on-scroll" data-cat="motion">
+        <div class="project-thumb carousel" style="height:auto;filter:none">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="https://img.youtube.com/vi/g8bLZSGHGD4/hqdefault.jpg" alt="Textos y Paths — preview">
+            </div>
+            <div class="carousel-slide">
+              <img src="images/Cap_textos_paths.png" alt="Textos y Paths — proceso">
+            </div>
+          </div>
+          <button class="carousel-btn prev">&#8249;</button>
+          <button class="carousel-btn next">&#8250;</button>
+          <div class="carousel-dots">
+            <button class="carousel-dot active"></button>
+            <button class="carousel-dot"></button>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="tag tag-accent">Motion Graphics</span>
+          <h3>Textos &amp; Paths</h3>
+          <p class="project-client">Proyecto personal</p>
+          <p class="project-desc">Animación tipográfica con trazos, máscaras mate y animación de paths. Los textos se construyen progresivamente mediante líneas que revelan las letras, combinando easing y control de velocidad para lograr transiciones fluidas.</p>
+          <a href="https://www.youtube.com/watch?v=g8bLZSGHGD4" target="_blank" rel="noopener"
+             class="btn btn-primary btn-sm" style="margin-top:18px;display:inline-flex">Ver en YouTube</a>
+        </div>
+      </div>
 
       <!-- ══ AGREGA MÁS PROYECTOS AQUÍ ══ -->
 
@@ -554,6 +604,21 @@
 </footer>
 
 <script>
+  // Carousel
+  document.querySelectorAll('.carousel').forEach(car => {
+    const track = car.querySelector('.carousel-track');
+    const dots  = car.querySelectorAll('.carousel-dot');
+    let idx = 0;
+    const go = n => {
+      idx = (n + dots.length) % dots.length;
+      track.style.transform = `translateX(-${idx * 100}%)`;
+      dots.forEach((d,i) => d.classList.toggle('active', i === idx));
+    };
+    car.querySelector('.prev').addEventListener('click', e => { e.stopPropagation(); go(idx - 1); });
+    car.querySelector('.next').addEventListener('click', e => { e.stopPropagation(); go(idx + 1); });
+    dots.forEach((d,i) => d.addEventListener('click', e => { e.stopPropagation(); go(i); }));
+  });
+
   // Project filter
   const btns  = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.project-card[data-cat]');
